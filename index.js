@@ -2,7 +2,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-require('dotenv').config(); // Add this line
+
 
 
 
@@ -13,9 +13,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// MongoDB connection
-const mongoose = require('mongoose');
-require('dotenv').config(); // Ensure dotenv is required
+
 
 const mongoURI = "mongodb+srv://pratapruhela1922:qwerty1922roundsround@mydatabase.o2zoz.mongodb.net/mydatabase?retryWrites=true&w=majority";
 
