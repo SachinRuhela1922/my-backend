@@ -14,14 +14,19 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI, { // Update this line
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
-    console.log('MongoDB connected');
-}).catch((error) => {
-    console.error('MongoDB connection error:', error);
-});
+const mongoose = require('mongoose');
+require('dotenv').config(); // Ensure dotenv is required
+
+const mongoURI = "mongodb+srv://pratapruhela1922:qwerty1922roundsround@mydatabase.o2zoz.mongodb.net/mydatabase?retryWrites=true&w=majority";
+
+mongoose.connect(mongoURI)
+    .then(() => {
+        console.log("MongoDB connected successfully");
+    })
+    .catch((error) => {
+        console.error("Failed to connect to MongoDB:", error);
+    });
+
 
 // Define a schema and model
 const dataSchema = new mongoose.Schema({
